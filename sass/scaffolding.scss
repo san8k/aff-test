@@ -1,0 +1,110 @@
+$aff-yellow: #f7e611;
+$aff-lightgray: #fefefe;
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1440px;
+
+@mixin first-layout() {
+    z-index: 50;
+}
+@mixin second-layout() {
+    z-index: 40;
+}
+@mixin third-layout() {
+    z-index: 30;
+}
+@mixin fourth-layout() {
+    z-index: 20;
+}
+@mixin fifth-layout() {
+    z-index: 10;
+}
+@mixin sixth-layout() {
+    z-index: 0;
+}
+
+.visually-hidden {
+    visibility: hidden;
+    font-size: 1px;
+    opacity: 0;
+}
+
+.page {
+    min-width: $phone-width;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-width: $phone-width;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: $aff-yellow;
+}
+
+.symbols-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* Background for left half of the page */
+.background {
+    display: none;
+}
+
+@media (min-width: $tablet-width) {
+    .wrapper {
+        background-color: transparent;
+        min-width: 758px;
+        max-width: 1300px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+}    
+
+@media (min-width: $desktop-width) {
+
+    .wrapper {
+        width: 1440px;
+        max-width: 1920px;
+        min-height: 738px;
+    }
+
+    /* Background for left half of the page */
+    .background {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: $aff-lightgray;
+        box-shadow: -70px 0 150px 10px #e9e9e9 inset;
+        @include sixth-layout();
+    }
+
+    /* White rectangle with shadow under first slider */
+    .shadow-rect {
+        position: absolute;
+        width: 600px;
+        height: 68.9%;
+        bottom: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: -70px 0 100px 2px #e9e9e9 inset,
+                    -70px 0 100px 2px #f2f2f2;
+    }
+
+}
+
+

@@ -1,0 +1,631 @@
+@mixin big-letter {
+    font-family: Geometria, Arial, sans-serif;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 500;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(0,0,0,0.5);
+    padding: 0;
+    margin: 0;
+}
+
+@mixin small-letter {
+    color: #000;
+    font-family: Philosopher;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.symbol {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+/* Big letter "A" */
+.symbol-1 {
+    left: 21.8%;
+    top: 41.2%;
+    @include big-letter();
+    @include first-layout();
+}
+
+/* Big letter "G" */
+.symbol-2 {
+    left: 46.5%;
+    top: 38.5%;
+    @include big-letter();
+    @include third-layout();
+}
+
+/* Big letter "E" */
+.symbol-3 {
+    right: 20.2%;
+    top: 24.7%;
+    @include big-letter();
+    @include third-layout();
+}
+
+/* Medium letter "A" */
+.symbol-4 { 
+    left: 6.25%;
+    top: 2.81%;
+    font-family: Philosopher, Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 23px;
+    color: black;
+    @include third-layout();
+}
+
+/* Transparent triangle */
+.symbol-5 {
+    top: 90.4%;
+    left: 14.06%;
+    @include first-layout();
+}
+
+/* Black triangle */
+.symbol-6 {
+    // right: 28px;
+    right: 8.8%;
+    // top: 227px;
+    // bottom: 56%;
+    top: 39.8%;
+    // bottom: 318px;
+    @include first-layout();
+}
+
+/* Number "13" */
+.symbol-7 {
+    bottom: 20px;
+    right: -86px;
+    color: #000000;
+    font-family: Geometria, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 24px;
+    letter-spacing: 2px;
+    @include first-layout();
+}
+
+/* Small letters for "A.F.F.I.N.A.G.E" */
+.symbol-8,
+.symbol-9,
+.symbol-10,
+.symbol-11,
+.symbol-12,
+.symbol-13,
+.symbol-14,
+.symbol-15,
+/* Number "51" */
+.symbol-16,
+/* Second transparent triangle */
+.symbol-17,
+/* Second black triangle */
+.symbol-18,
+/* Fat yellow line */
+.symbol-19,
+/* Small ring under "G" */
+.symbol-20,
+/* Number "7"*/
+.symbol-21,
+/* Small black line */
+.symbol-22,
+/* Number "(1)"*/
+.symbol-23,
+/* Number "(3)"*/
+.symbol-24,
+/* Phrase "тестовое задание" */
+.symbol-25,
+/* Phrase "URAL 03" */
+.symbol-26,
+/* Ring around phrase "URAL 03" */
+.symbol-27 {
+    display: none;
+}
+
+/* Transparent polygon */
+.poly {
+    left: 67.7%;
+    top: -17%;
+    transform: rotate(90deg);
+    @include fifth-layout();
+}
+
+/* Vertical tag on the left side */
+.tagline {
+    bottom: 56%;
+    left: 8%;
+    transform: translateX(-50%) rotate(-90deg);
+    opacity: 0.5;
+    color: #000000;
+    font-family: Philosopher;
+    font-size: 9px;
+    font-style: italic;
+    line-height: 10.8px;
+    @include first-layout();
+}
+
+.wreath {
+    @include first-layout();
+
+    &--small {
+        width: 140px;
+        left: 50%;
+        bottom: -22px;
+        transform: translateX(-50%);
+    }
+
+    &--big {
+        display: none;
+    }
+}
+
+/* Yellow rectangle on the big display or yelow angle on the small and medium display */
+.angle {
+    bottom: 0px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 105px solid transparent;
+    border-left: 0;
+    border-bottom: 0;
+    border-right-color: $aff-yellow;
+    @include second-layout();
+}
+
+/* Title "Affinage" */
+.title {
+    display: none;
+}
+
+@media (min-width: $tablet-width) {
+    .tagline {
+        left: 5%;
+        top: 55.23%;
+    }
+
+    .wreath {
+        &--small {
+            display: none;
+        }
+    }
+
+    .angle {
+        display: none;
+        height: 383px;
+        width: 138px;
+        right: 10%;
+        bottom: 20%;
+        border: none;
+        background-color: transparent;
+        transform: rotate(0deg);
+    }
+
+    /* Big letter "A" */
+    .symbol-1 {
+        left: 68.2%;
+        top: 7.5%;
+    }
+
+    /* Big letter "G" */
+    .symbol-2 {
+        left: 20%;
+        top: 70%;
+        @include fourth-layout();
+    }
+
+    /* Big letter "E" */
+    .symbol-3 {
+        right: 40%;
+        top: 25%;
+    }
+
+    /* Medium letter "A" */
+    .symbol-4 { 
+        left: 2.43%;
+        top: 4.3%;
+    }
+
+    /* Transparent triangle */
+    .symbol-5 {
+        bottom: 80px;
+        left: 45px;
+    }
+
+    /* Black triangle */
+    .symbol-6 {
+        top: 37%;
+        right: 13%;
+    }
+
+    /* Number "13" */
+    .symbol-7 {
+        right: 20%;
+        top: 55%;
+    }
+
+    /* Small letters for "A.F.F.I.N.A.G.E" */
+    .symbol-8,
+    .symbol-9,
+    .symbol-10,
+    .symbol-11,
+    .symbol-12,
+    .symbol-13,
+    .symbol-14,
+    .symbol-15 {
+        display: block;
+        @include small-letter();
+        @include first-layout();
+    }
+
+    /* Small letter "A" for "A.F.F.I.N.A.G.E" */
+    .symbol-8 {
+        top: 31%;
+        left: 12%;
+    }
+    
+    /* Small letter "F" for "A.F.F.I.N.A.G.E" */
+    .symbol-9 {
+        top: 27%;
+        left: 15%;
+    }
+    
+    /* Second small letter "F" for "A.F.F.I.N.A.G.E" */
+    .symbol-10 {
+        top: 33%;
+        left: 18%;
+    }
+    
+    /* Small letter "I" for "A.F.F.I.N.A.G.E" */
+    .symbol-11 {
+        top: 29%;
+        left: 22%;  
+    }
+    
+    /* Small letter "N" for "A.F.F.I.N.A.G.E" */
+    .symbol-12 {
+        top: 35%;
+        left: 25%;  
+    }
+    
+    /* Second small letter "A" for "A.F.F.I.N.A.G.E" */
+    .symbol-13 {
+        bottom: 34%;
+        left: 45%;  
+    }
+    
+    /* Small letter "G" for "A.F.F.I.N.A.G.E" */
+    .symbol-14 {
+        bottom: 29%;
+        left: 49%; 
+    }
+    
+    /* Small letter "E" for "A.F.F.I.N.A.G.E" */
+    .symbol-15 {
+        bottom: 26%;
+        left: 55%; 
+    }
+
+    /* Number "51" */
+    .symbol-16 {
+        display: block;
+        left: 40%;
+        top: 8%;
+        opacity: 0.5;
+        color: #000000;
+        font-family: Geometria, Arial, sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        line-height: 33.6px;
+        letter-spacing: 2.8px;
+        @include first-layout();
+    }
+    
+    /* Title "Affinage" */
+    .title {
+        display: block;
+        top: 42%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-family: Philosopher;
+        font-size: 90px;
+        font-weight: 400;
+        letter-spacing: 32.4px;
+        text-transform: uppercase;
+        @include first-layout();
+    }
+
+    .poly {
+        left: 33%;
+        top: 30%;
+        transform: rotate(180deg);
+        @include fourth-layout();
+    }
+    
+}
+
+@media (min-width: $desktop-width) {
+    .symbol {
+        display: block;
+    }
+
+    .tagline {
+        transform: rotate(270deg);
+        left: 18.9%;
+        top: 29%;
+        margin-top: 18%;
+    }
+
+    .wreath {
+        &--small {
+            top: none;
+            bottom: 11.2%;
+            width: 214px;
+            @include second-layout();
+        }
+
+        &--big {
+            display: block;
+            top: 0;
+            right: 0;
+            @include first-layout();
+        }
+    }
+
+    /* Yellow rectangle over second slide */
+    .angle {
+        top: 35%;
+        right: 18.7%;
+        margin-top: -1.7%;
+        background-color: $aff-yellow;
+        transform: translateY(0);
+        @include third-layout();
+    }
+
+    /* Big letter "A" */
+    .symbol-1 {
+        left: 68.4%;
+        top: 8.1%;
+        font-size: 80px;
+    }
+
+    /* Big letter "G" */
+    .symbol-2 {
+        left: 74.33%;
+        top: 28.08%;
+        transform: rotate(0deg);
+        font-size: 80px;
+        @include third-layout();
+    }
+
+    /* Big letter "E" */
+    .symbol-3 {
+        right: 15.7%;
+        top: 18.26%;
+        color: transparent;
+        font-size: 80px;
+        -webkit-text-stroke-color:rgba(0,0,0,0.5);
+        
+        @include fourth-layout();
+    }
+
+    /* Medium letter "A" */
+    .symbol-4 { 
+        left: 1.75%;
+        top: 4.1%;
+        transform: rotate(0deg);
+        @include third-layout();
+    }
+
+    /* Transparent triangle */
+    .symbol-5 {
+        top: 97.6%;
+        left: 31.05%;
+    }
+
+    /* Black triangle */
+    .symbol-6 {
+        top: 86.7%;
+        left: 12.8%;
+        @include first-layout();
+    }
+
+    /* Number "13" */
+    .symbol-7 {
+        right: 65px;
+        top: 314px;
+        font-size: 46px;
+        letter-spacing: 4.5px;
+    }
+
+    /* Small letter "A" for "A.F.F.I.N.A.G.E" */
+    .symbol-8 {
+        top: 92.6%;
+        left: 18.1%;
+    }
+    
+    /* Small letter "F" for "A.F.F.I.N.A.G.E" */
+    .symbol-9 {
+        top: 88.2%;
+        left: 22.65%;
+    }
+    
+    /* Second small letter "F" for "A.F.F.I.N.A.G.E" */
+    .symbol-10 {
+        top: 93.75%;
+        left: 27.2%;
+    }
+    
+    /* Small letter "I" for "A.F.F.I.N.A.G.E" */
+    .symbol-11 {
+        top: 90.25%;
+        left: 31.4%;  
+    }
+    
+    /* Small letter "N" for "A.F.F.I.N.A.G.E" */
+    .symbol-12 {
+        top: 95.25%;
+        left: 36%;  
+    }
+    
+    /* Second small letter "A" for "A.F.F.I.N.A.G.E" */
+    .symbol-13 {
+        top: 89.95%;
+        left: 64.85%;  
+    }
+    
+    /* Small letter "G" for "A.F.F.I.N.A.G.E" */
+    .symbol-14 {
+        top: 91%;
+        left: 72.1%; 
+    }
+    
+    /* Small letter "E" for "A.F.F.I.N.A.G.E" */
+    .symbol-15 {
+        top: 94.3%;
+        left: 79.85%; 
+    }
+
+    /* Number "51" */
+    .symbol-16 {
+        top: 15.85%;
+        left: 38.83%;
+        transform: rotate(-90deg);
+        @include first-layout();
+    }
+
+    /* Second transparent triangle */
+    .symbol-17 {
+        bottom: 2.2%;
+        right: 31%;
+    }
+
+    /* Second black triangle */
+    .symbol-18 {
+        bottom: 4.7%;
+        right: 14.5%;
+    }
+
+    /* Fat yellow line */
+    .symbol-19 {
+        width: 212px;
+        height: 10px;
+        background-color: $aff-yellow;
+        bottom: 10.5%;
+        right: 42.5%;
+        @include first-layout();
+    }
+
+    /* Small ring under "G" */
+    .symbol-20 {
+        bottom: 9.5%;
+        right: 26.8%;
+        // margin-bottom: -2.95%;
+        margin-bottom: -35px;
+    }
+
+    /* Number "7"*/
+    .symbol-21 {
+        top: 342px;
+        right: 53px;
+        font-family: Geometria;
+        font-size: 17px;
+        font-weight: 900;
+        font-style: italic;
+        line-height: 20.4px;
+        @include first-layout();
+    }
+
+    /* Small black line */
+    .symbol-22 {
+        width: 17px;
+        height: 3px;
+        background-color: #000;
+        right: 46px;
+        top: 335px;
+        @include first-layout();
+    }
+
+    /* Numbers "(1)" and "(3)" */
+    .symbol-23,
+    .symbol-24 {
+        font-family: Geometria;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+        top: 22.62%;
+        left: 14.98%;
+        @include first-layout();
+    }
+
+    /* Number "(3)"*/
+    .symbol-24 {
+        top: 32.63%;
+    }
+
+    /* Phrase "тестовое задание" */
+    .symbol-25 {
+        opacity: 0.4;
+        font-family: Geometria;
+        font-size: 12px;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 14.4px;
+        letter-spacing: 0.4px;
+        left: -2.4%;
+        top: 49.13%;
+        @include first-layout();
+        transform: rotate(-90deg);
+    }
+
+    /* Phrase "URAL 03" */
+    .symbol-26 {
+        color: #ffffff;
+        font-family: Geometria;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2.14px;
+        left: 24px;
+        top: 30px;
+        @include first-layout();
+    }
+
+    /* Ring around phrase "URAL 03" */
+    .symbol-27 {
+        width: 99px;
+        height: 99px;
+        left: 40.5%;
+        top: 26.88%;
+        border: 1px solid #000;
+        border-radius: 50%;
+        @include first-layout();
+    }
+    
+    /* Title "Affinage" */
+    .title {
+        top: 25.75%;
+        left: 15%;
+        font-size: 140px;
+        letter-spacing: 50.4px;
+        transform: translateX(0);
+        margin-top: 8%;
+    }
+
+    /* Transparent polygon */
+    .poly {
+        left: 23.9%;
+        top: 33.1%;
+        transform: rotate(0);
+        @include second-layout();
+    }
+    
+
+}    
